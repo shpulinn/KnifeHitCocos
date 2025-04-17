@@ -134,3 +134,12 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# Cocos Creator specific
+/library/
+/temp/
+/local/
+/build/
+/node_modules/
+/dist/
+*.log
