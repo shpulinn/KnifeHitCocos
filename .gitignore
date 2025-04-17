@@ -135,11 +135,27 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-# Cocos Creator specific
-/library/
-/temp/
-/local/
-/build/
-/node_modules/
-/dist/
-*.log
+
+#///////////////////////////
+# Cocos Creator 3D Project
+#///////////////////////////
+library/
+temp/
+local/
+build/
+profiles/
+native
+#//////////////////////////
+# NPM
+#//////////////////////////
+node_modules/
+
+#//////////////////////////
+# VSCode
+#//////////////////////////
+.vscode/
+
+#//////////////////////////
+# WebStorm
+#//////////////////////////
+.idea/
