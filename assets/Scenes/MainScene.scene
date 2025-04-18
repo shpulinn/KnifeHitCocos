@@ -766,8 +766,8 @@
     "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 347.495,
-      "y": 853.3969999999999,
+      "x": 195.32,
+      "y": 853.397,
       "z": 0
     },
     "_lrot": {
@@ -805,7 +805,7 @@
     "__prefab": null,
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 297.5572509765625,
+      "width": 639.199951171875,
       "height": 89.838
     },
     "_anchorPoint": {
@@ -844,8 +844,11 @@
     "_lineHeight": 71.3,
     "_overflow": 0,
     "_enableWrapText": true,
-    "_font": null,
-    "_isSystemFontUsed": true,
+    "_font": {
+      "__uuid__": "3e734091-8721-453c-a7c8-a46de22cfab7",
+      "__expectedType__": "cc.TTFFont"
+    },
+    "_isSystemFontUsed": false,
     "_spacingX": 0,
     "_isItalic": false,
     "_isBold": false,
