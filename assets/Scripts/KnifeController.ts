@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Prefab, instantiate, Sprite, Vec3, tween } from 'cc';
+import { _decorator, Component, Node, Prefab, instantiate, Sprite, Vec3, tween, AudioSource } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('KnifeController')
@@ -11,6 +11,9 @@ export class KnifeController extends Component {
 
     @property(Node)
     woodNode: Node | null = null;
+
+    @property(AudioSource)
+    hitKnifeSound: AudioSource  | null = null;
 
     private currentKnife: Node | null = null;
     private defaultKnifePos: Vec3 = Vec3.ZERO;
@@ -53,7 +56,7 @@ export class KnifeController extends Component {
         console.log('Throwing knife to targetPos:', targetPos, 'woodPosition:', this.woodNode.position, 'woodRadius:', woodRadius);
 
         tween(this.currentKnife)
-            .to(.5, { position: targetPos }, { easing: 'linear' })
+            .to(.3, { position: targetPos }, { easing: 'linear' })
             .call(() => {
                 if (this.currentKnife) {
                     onComplete(this.currentKnife);
@@ -64,6 +67,8 @@ export class KnifeController extends Component {
 
     fallKnife(onComplete: () => void) {
         if (!this.currentKnife) return;
+
+        this.hitKnifeSound.play();
 
         const fallPos = new Vec3(this.currentKnife.position.x, -1080, 0);
         tween(this.currentKnife)
